@@ -31,7 +31,7 @@ class InputText extends StatelessWidget {
           onChanged: onChanged,
           validator: (value) {
             if (validator != null) {
-              validator!(value ?? "");
+              return validator!(value ?? "");
             }
           },
           style: AppTheme.textStyles.input,
