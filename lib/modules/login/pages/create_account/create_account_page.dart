@@ -1,5 +1,9 @@
+// ignore_for_file: avoid_unnecessary_containers
+
 import 'package:flutter/material.dart';
 import 'package:ta_caro/modules/login/pages/create_account/create_account_controller.dart';
+import 'package:ta_caro/modules/login/repositories/login_repository_impl.dart';
+import 'package:ta_caro/shared/services/app_database.dart';
 import 'package:ta_caro/shared/theme/app_theme.dart';
 import 'package:ta_caro/widgets/button/button.dart';
 import 'package:ta_caro/widgets/input_text/input_text.dart';
@@ -13,14 +17,17 @@ class CreateAccountPage extends StatefulWidget {
 }
 
 class _CreateAccountPageState extends State<CreateAccountPage> {
-  final controller = CreateAccountController();
+  late final CreateAccountController controller;
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
+    controller = CreateAccountController(
+      repository: LoginRepositoryImpl(database: AppDatabase.instance),
+    );
     controller.addListener(() {
       controller.state.when(
-          success: (value) => Navigator.pushNamed(context, "/home"),
+          success: (value) => Navigator.pop(context),
           error: (message, _) => scaffoldKey.currentState!
               .showBottomSheet((context) => BottomSheet(
                   onClosing: () {},
