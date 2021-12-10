@@ -1,13 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:ta_caro/shared/models/user_model.dart';
+import 'package:ta_caro/modules/feed/feed_page.dart';
 import 'package:ta_caro/shared/theme/app_theme.dart';
 import 'package:ta_caro/widgets/bottom_navigator/app_bottom_navigator.dart';
-import 'package:ta_caro/widgets/card_product/card_product.dart';
-import 'package:ta_caro/widgets/list_tile/app_list_tile.dart';
 
 class HomePage extends StatefulWidget {
-  final UserModel user;
-  const HomePage({Key? key, required this.user}) : super(key: key);
+  final List<Widget> pages;
+  const HomePage({Key? key, required this.pages}) : super(key: key);
 
   @override
   State<HomePage> createState() => _HomePageState();
@@ -24,34 +22,22 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppTheme.colors.background,
-      body: Stack(
-        children: [
-          Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              SizedBox(
-                width: MediaQuery.of(context).size.width,
-                height: 126,
-                child: ListView.builder(
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => CardProduct(),
-                ),
+      body: SizedBox(
+        height: MediaQuery.of(context).size.height,
+        child: Stack(
+          children: [
+            widget.pages[currentIndex],
+            Positioned(
+              bottom: 14,
+              left: 26,
+              right: 26,
+              child: AppBottomNavigator(
+                currentIndex: currentIndex,
+                onChanged: changeIndex,
               ),
-              AppListTile(),
-              AppListTile(),
-              AppListTile(),
-            ],
-          ),
-          Positioned(
-            bottom: 14,
-            left: 26,
-            right: 26,
-            child: AppBottomNavigator(
-              currentIndex: currentIndex,
-              onChanged: changeIndex,
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
