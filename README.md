@@ -1,16 +1,49 @@
-# ta_caro
+<h1 align="center">
+  <img alt="letmeask" src="https://github.com/JhonataAugust0/ta_caro/blob/master/.github/logo.png?raw=true" width="360px" /> 
+  <br />
+   Flutter | Supabase  
+</h1>
 
-A new Flutter project.
+## :bookmark: Resume
+It's expensive? It is an application for people to use when shopping in supermarkets. Through the app, it will be possible to compare the price of the supermarket where the person is with the price of other supermarkets, helping the user to make better purchases.
 
-## Getting Started
+## :bulb: Contents covered
+<br />
 
-This project is a starting point for a Flutter application.
+- Flutter
+- Supabase database
+- Validators
+     
+## :wrench: Putting the project to run
 
-A few resources to get you started if this is your first Flutter project:
+```
+First, correctly configure the Flutter development environment on your machine, see: https://flutter.dev/docs/get-started/install
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- Clone this repository:
+$ git clone https://github.com/JhonataAugust0/ta_caro.git
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Enter the directory:
+$ cd ta_caro
+
+- Install dependencies:
+$ flutter pub get
+
+- Launch the app: 
+$ flutter run
+```
+
+<br />
+
+## :memo: License
+
+This project is under the [MIT license](LICENSE) for more details.
+<br />
+<br />
+
+## :wave: Social
+
+Follow @Jhonata on the networks :wink:
+<br />
+
+- [LinkedIn](https://www.linkedin.com/in/jhonata-augusto-2301541b5/)
+
