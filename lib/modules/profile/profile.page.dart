@@ -17,9 +17,12 @@ class _ProfilePageState extends State<ProfilePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(
-              "Perfil",
-              style: AppTheme.textStyles.title.copyWith(fontSize: 36),
+            Padding(
+              padding: const EdgeInsets.only(top: 65),
+              child: Text(
+                "Perfil",
+                style: AppTheme.textStyles.title.copyWith(fontSize: 36),
+              ),
             ),
             SizedBox(height: 17),
             Container(

@@ -22,7 +22,7 @@ class ChartHorizontal extends StatelessWidget {
                 stops: [percent, 0.0],
               )),
           child: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 16.0),
+            padding: const EdgeInsets.symmetric(horizontal: 16),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
@@ -35,17 +35,21 @@ class ChartHorizontal extends StatelessWidget {
                   Text(
                     "${((1 - percent) * 100).ceil()}%",
                     style: AppTheme.textStyles.chart,
-                  ),
+                  )
               ],
             ),
           ),
         ),
-        SizedBox(height: 12),
+        SizedBox(
+          height: 12,
+        ),
         Text(
           "Relação de compras caras e boas compras",
           style: AppTheme.textStyles.hint,
         ),
-        SizedBox(height: 14),
+        SizedBox(
+          height: 14,
+        ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
@@ -55,11 +59,13 @@ class ChartHorizontal extends StatelessWidget {
                   radius: 10,
                   backgroundColor: AppTheme.colors.badColor,
                 ),
-                SizedBox(width: 8),
+                SizedBox(
+                  width: 8,
+                ),
                 Text(
                   "Ruim",
                   style: AppTheme.textStyles.hint,
-                )
+                ),
               ],
             ),
             Row(
@@ -68,13 +74,15 @@ class ChartHorizontal extends StatelessWidget {
                   radius: 10,
                   backgroundColor: AppTheme.colors.primary,
                 ),
-                SizedBox(width: 8),
+                SizedBox(
+                  width: 8,
+                ),
                 Text(
                   "Bom",
                   style: AppTheme.textStyles.hint,
                 ),
               ],
-            ),
+            )
           ],
         )
       ],
